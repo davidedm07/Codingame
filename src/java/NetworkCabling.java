@@ -1,3 +1,5 @@
+package java;
+
 import java.util.*;
 
 /**
@@ -31,7 +33,7 @@ class House {
 
     @Override
     public String toString() {
-        return "House{" +
+        return "java.House{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';
