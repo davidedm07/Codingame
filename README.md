@@ -3,6 +3,7 @@ Some of my solutions to Codingame puzzles implemented in Java/Scala <br />
 <br />
 JAVA: <br />
 ASCII Art <br />
+Bender Episode 1 <br />
 Chuck Norris <br />
 Conway Sequence <br />
 Defibrillators <br />
