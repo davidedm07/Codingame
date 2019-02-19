@@ -81,8 +81,10 @@ public class BenderEpisode1 {
             else if (maze[benderState.position.x][benderState.position.y] == 'W')
                 benderState.currentDirection = "WEST";
 
-            if (benderState.changedMap)
+            if (benderState.changedMap) {
                 states = new ArrayList<>();
+                benderState.changedMap = false;
+            }
 
             if (states.contains(benderState)) {
                 isLooping = true;
