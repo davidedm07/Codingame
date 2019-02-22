@@ -1,4 +1,4 @@
-package java;
+package com.github.codingame.java;
 
 import java.util.HashMap;
 import java.util.Scanner;

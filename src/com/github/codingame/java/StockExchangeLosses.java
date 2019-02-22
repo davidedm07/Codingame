@@ -1,4 +1,4 @@
-package java;
+package com.github.codingame.java;
 
 import java.util.Scanner;
 
@@ -20,10 +20,7 @@ public class StockExchangeLosses {
                 previous = v;
             } else {
 
-                if (v < previous)
-                    isDropping = true;
-                else
-                    isDropping = false;
+                isDropping = v < previous;
 
                 previous = v;
                 if (v < max && isDropping) {

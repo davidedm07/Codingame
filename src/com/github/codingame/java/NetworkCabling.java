@@ -1,4 +1,4 @@
-package java;
+package com.github.codingame.java;
 
 import java.util.*;
 
@@ -33,7 +33,7 @@ class House {
 
     @Override
     public String toString() {
-        return "java.House{" +
+        return "House{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

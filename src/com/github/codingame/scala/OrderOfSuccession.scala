@@ -1,4 +1,4 @@
-package scala
+package com.github.codingame.scala
 
 import scala.collection.mutable
 import scala.io.StdIn
@@ -7,7 +7,7 @@ import scala.math._
 object OrderOfSuccession extends App {
   val n = StdIn.readInt()
   val personsMap: mutable.HashMap[String, Person] = mutable.HashMap.empty
-  var personsList = List.empty[Person]
+  val head :: tail = personsList
 
   for (i <- 0 until n) {
     val Array(name, parent, _birth, death, religion, gender) = StdIn.readLine() split " "
@@ -17,10 +17,9 @@ object OrderOfSuccession extends App {
     personsMap(person.name) = person
     personsList = person :: personsList
   }
-  val head :: tail = personsList
-  Person.createLinks(head, tail, personsMap)
-
   val ancestor = personsList.filter(_.parent == "-")
+  Person.createLinks(head, tail, personsMap)
+  var personsList = List.empty[Person]
 
   if (!ancestor.head.isDead)
     println(ancestor.head.name)

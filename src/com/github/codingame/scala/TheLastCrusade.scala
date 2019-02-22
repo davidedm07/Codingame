@@ -1,21 +1,23 @@
-package scala
+package com.github.codingame.scala
+
+import scala.io.StdIn
 
 object TheLastCrusade extends App {
 
   // w: number of columns.
   // h: number of rows.
-  val Array(w, h) = for (i <- readLine split " ") yield i.toInt
+  val Array(w, h) = for (i <- StdIn.readLine split " ") yield i.toInt
   var levels = scala.collection.mutable.ListBuffer.empty[List[String]]
   for (i <- 0 until h) {
-    val line = readLine // represents a line in the grid and contains W integers. Each integer represents one room of a given type.
+    val line = StdIn.readLine // represents a line in the grid and contains W integers. Each integer represents one room of a given type.
     val list: List[String] = line.split(" ").toList
     levels += list
   }
-  val ex = readInt // the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
+  val ex = StdIn.readInt // the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
   val exitDown = List(1, 3, 7, 8, 9, 12, 13)
   // game loop
   while (true) {
-    val Array(_xi, _yi, pos) = readLine split " "
+    val Array(_xi, _yi, pos) = StdIn.readLine split " "
     val xi = _xi.toInt
     val yi = _yi.toInt
 

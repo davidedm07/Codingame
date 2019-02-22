@@ -1,4 +1,4 @@
-package java;
+package com.github.codingame.java;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -53,7 +53,10 @@ public class ConwaySequence {
             char x = toProcess.charAt(i);
             //System.err.println("X " + x);
             if (x != previous) {
-                sb.append(charCounts.get(previous) + " " + previous + " ");
+                sb.append(charCounts.get(previous));
+                sb.append(" ");
+                sb.append(previous);
+                sb.append(" ");
                 charCounts.put(previous, 0);
                 charCounts.put(x, 1);
             } else {
@@ -65,7 +68,7 @@ public class ConwaySequence {
             previous = x;
         }
         //System.err.println("MAP: "+ charCounts);
-        String result = sb.append(charCounts.get(previous) + " " + previous).toString();
+        String result = sb.append(charCounts.get(previous)).append(" ").append(previous).toString();
 
         if (multipleCiphers)
             result += " 1 " + n;

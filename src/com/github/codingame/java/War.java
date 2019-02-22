@@ -1,4 +1,4 @@
-package java;
+package com.github.codingame.java;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
