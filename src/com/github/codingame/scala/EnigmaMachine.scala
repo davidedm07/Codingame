@@ -1,3 +1,5 @@
+package com.github.codingame.scala
+
 import scala.io.StdIn
 
 /**
@@ -10,11 +12,12 @@ object EnigmaMachine extends App {
   val pseudorandomnumber = StdIn.readInt
 
   val rotorsSeq = for(i <- 0 until 3; rotor:String = StdIn.readLine()) yield rotor
-  val rotors = rotorsSeq.toList.reverse
+  val rotors = rotorsSeq.toList
 
   val message = StdIn.readLine()
 
   val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
   val messageFiltered = message.toUpperCase.filter(c => c>= 'A' && c<= 'Z')
   val messageWithIndex = messageFiltered.zipWithIndex
 
@@ -54,7 +57,7 @@ object RotorsMod {
 
   def getCharacterShift(c:Char, alphabet:String,index:Int, number:Int,operation:String):Char = {
     val indexInAlphabet = if(operation=="ENCODE") alphabet.indexOf(c) + index + number else alphabet.indexOf(c) - index - number
-    var value:Int = indexInAlphabet
+    /*var value:Int = indexInAlphabet
     val circleIndex = if(operation=="ENCODE") {
       while(value>25) {
         value = value - 26
@@ -65,7 +68,10 @@ object RotorsMod {
         value = 26 + value
       }
       value
-    }
+    }*/
+    Console.err.println(indexInAlphabet)
+    val circleIndex = if(indexInAlphabet < 0 && Math.abs(indexInAlphabet) != 26) 26 - Math.abs(indexInAlphabet) % 26 else indexInAlphabet % 26
+    Console.err.println(circleIndex)
     alphabet.charAt(circleIndex)
   }
 }
